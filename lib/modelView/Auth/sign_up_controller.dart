@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:meettown/view/Auth/Stepper.dart';
 import 'package:meettown/view/Auth/completed_profile.dart';
 
 class SignUpController extends ChangeNotifier {
@@ -29,6 +30,6 @@ class SignUpController extends ChangeNotifier {
 
   void SignUp(BuildContext context) {
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => CompleteProfileView()));
+        MaterialPageRoute(builder: (context) => StepperDemo()));
   }
 }
