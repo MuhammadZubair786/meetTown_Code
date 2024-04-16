@@ -17,9 +17,10 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       body: Consumer<LoginController>(
         builder: (context, value, child) => Container(
-          decoration: BoxDecoration(
-              color: appColors.appBarBgWhite,
-              borderRadius: BorderRadius.circular(10)),
+         decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/imgs/log-regis-bg.jpg'),
+                fit: BoxFit.cover)),
           width: size.width * .98,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -31,7 +32,7 @@ class LoginView extends StatelessWidget {
                 ),
                 Text(
                   'Login to your account',
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.headline1!.copyWith(color: Colors.white),
                 ),
                 const SizedBox(
                   height: 10,
@@ -57,7 +58,7 @@ class LoginView extends StatelessWidget {
                               onChanged: (v) {
                                 value.setCheckboxValue(v);
                               }),
-                          Text('Remember me')
+                          Text('Remember me',style: TextStyle(color: Colors.white),)
                         ],
                       ),
                     ),
@@ -84,7 +85,7 @@ class LoginView extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Text('Or Login With'),
+                Text('Or Login With',style: TextStyle(color: Colors.white),),
                 SizedBox(
                   height: 10,
                 ),

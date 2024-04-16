@@ -19,24 +19,23 @@ class SignUpView extends StatelessWidget {
     return Scaffold(
         body: Consumer<SignUpController>(
       builder: (context, value, child) => Container(
-        decoration: BoxDecoration(
-            color: appColors.appBarBgWhite,
-            borderRadius: BorderRadius.circular(10)),
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/imgs/log-regis-bg.jpg'),
+                fit: BoxFit.cover)),
         width: size.width * .98,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 10,
-              ),
+            
               Text(
                 'Create an Account!',
-                style: Theme.of(context).textTheme.headline1,
+                style:TextStyle(color: Colors.white,fontSize: 25),
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               Row(
                 children: [
@@ -92,7 +91,7 @@ class SignUpView extends StatelessWidget {
                       child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all<Color>(Colors.white),
+                                MaterialStateProperty.all<Color>(Colors.transparent),
                             foregroundColor: MaterialStateProperty.all<Color>(
                                 appColors.primaryInputFieldBorder),
                             elevation: MaterialStateProperty.all<double>(
@@ -161,7 +160,7 @@ class SignUpView extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 30,
               ),
               Text.rich(
                   textAlign: TextAlign.center,
@@ -172,22 +171,24 @@ class SignUpView extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .headline2!
-                            .copyWith(color: appColors.textSecondaryColor)),
+                            .copyWith(color: appColors.textPrimaryColor)),
                     TextSpan(
                         text: 'Terms & Conditions ',
-                        style: Theme.of(context).textTheme.headline2),
+                         style: Theme.of(context)
+                            .textTheme
+                            .headline2!),
                     TextSpan(
                         text: ' and you have read and understood our ',
-                        style: Theme.of(context)
+                        style:  Theme.of(context)
                             .textTheme
                             .headline2!
-                            .copyWith(color: appColors.textSecondaryColor)),
+                            .copyWith(color: appColors.textPrimaryColor)),
                     TextSpan(
                         text: ' Privacy Policy ',
                         style: Theme.of(context).textTheme.headline2),
                   ])),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               CustomButtonWidget(
                   width: size.width * .95,
@@ -200,11 +201,14 @@ class SignUpView extends StatelessWidget {
                     value.SignUp(context);
                   }),
               const SizedBox(
-                height: 10,
+                height: 30,
               ),
-              const Text('Or Register With'),
+               Text('Or Register With',  style: Theme.of(context)
+                            .textTheme
+                            .headline2!
+                            .copyWith(color: appColors.textPrimaryColor)),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
                Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -260,7 +264,7 @@ class ChooseGenderWidget extends StatelessWidget {
         ),
         hint: const Text(
           'Choose Gender',
-          style: TextStyle(fontSize: 14),
+          style: TextStyle(fontSize: 14,color: Colors.white),
         ),
         items: ['Male', 'Female']
             .map((item) => DropdownMenuItem<String>(
@@ -292,7 +296,7 @@ class ChooseGenderWidget extends StatelessWidget {
         iconStyleData: const IconStyleData(
           icon: Icon(
             Icons.arrow_drop_down,
-            color: Colors.black45,
+            color: Colors.white,
           ),
           iconSize: 24,
         ),

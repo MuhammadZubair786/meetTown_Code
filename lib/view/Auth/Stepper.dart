@@ -11,17 +11,17 @@ class _StepperDemoState extends State<StepperDemo> {
   int _currentStep = 0;
   List<Step> steps = [
     Step(
-      title: Text('Select Image'),
+      title: Text(''),
       content: SelectImagePage(),
       isActive: true,
     ),
     Step(
-      title: Text('Select Location'),
+      title: Text(''),
       content: Text('Step 2: Select a location'),
       isActive: false,
     ),
     Step(
-      title: Text('Select Personal Information'),
+      title: Text(''),
       content: Text('Step 3: Enter your name and email'),
       isActive: false,
     ),
@@ -38,55 +38,50 @@ class _StepperDemoState extends State<StepperDemo> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(20.0),
-              child: Stepper(
-                
-                connectorColor: MaterialStateProperty.all(appColors.textBlueColor),
-                // connectorThickness: 3,
-                currentStep: _currentStep,
-                onStepContinue: () {
-                  if (_currentStep < steps.length - 1) {
-                    setState(() {
-                      steps[_currentStep] = Step(
-                        title: steps[_currentStep].title,
-                        content: steps[_currentStep].content,
-                        isActive: false, // Set current step to inactive
-                      );
-                      _currentStep += 1; // Move to the next step
-                      steps[_currentStep] = Step(
-                        title: steps[_currentStep].title,
-                        content: steps[_currentStep].content,
-                        isActive: true, // Set next step to active
-                      );
-                    });
-                  }
-                },
-                onStepCancel: () {
-                  if (_currentStep > 0) {
-                    setState(() {
-                      steps[_currentStep] = Step(
-                        title: steps[_currentStep].title,
-                        content: steps[_currentStep].content,
-                        isActive: false, // Set current step to inactive
-                      );
-                      _currentStep -= 1; // Move to the previous step
-                      steps[_currentStep] = Step(
-                        title: steps[_currentStep].title,
-                        content: steps[_currentStep].content,
-                        isActive: true, // Set previous step to active
-                      );
-                    });
-                  }
-                },
-                steps: steps,
-              ),
-            ),
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Stepper(
+            type: StepperType.horizontal,
+            
+            connectorColor: MaterialStateProperty.all(appColors.textBlueColor),
+            // connectorThickness: 3,
+            currentStep: _currentStep,
+            onStepContinue: () {
+              if (_currentStep < steps.length - 1) {
+                setState(() {
+                  steps[_currentStep] = Step(
+                    title: steps[_currentStep].title,
+                    content: steps[_currentStep].content,
+                    isActive: false, // Set current step to inactive
+                  );
+                  _currentStep += 1; // Move to the next step
+                  steps[_currentStep] = Step(
+                    title: steps[_currentStep].title,
+                    content: steps[_currentStep].content,
+                    isActive: true, // Set next step to active
+                  );
+                });
+              }
+            },
+            onStepCancel: () {
+              if (_currentStep > 0) {
+                setState(() {
+                  steps[_currentStep] = Step(
+                    title: steps[_currentStep].title,
+                    content: steps[_currentStep].content,
+                    isActive: false, // Set current step to inactive
+                  );
+                  _currentStep -= 1; // Move to the previous step
+                  steps[_currentStep] = Step(
+                    title: steps[_currentStep].title,
+                    content: steps[_currentStep].content,
+                    isActive: true, // Set previous step to active
+                  );
+                });
+              }
+            },
+            steps: steps,
+          ),
         ),
       ),
     );

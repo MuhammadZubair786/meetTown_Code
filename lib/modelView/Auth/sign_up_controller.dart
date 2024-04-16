@@ -30,6 +30,6 @@ class SignUpController extends ChangeNotifier {
 
   void SignUp(BuildContext context) {
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => StepperDemo()));
+        MaterialPageRoute(builder: (context) => CompleteProfileView()));
   }
 }

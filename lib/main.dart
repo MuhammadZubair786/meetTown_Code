@@ -4,6 +4,7 @@ import 'package:meettown/modelView/Auth/completed_profile_controller.dart';
 import 'package:meettown/modelView/Auth/login_controller.dart';
 import 'package:meettown/modelView/Auth/sign_up_controller.dart';
 import 'package:meettown/modelView/Services/splash_controller.dart';
+import 'package:meettown/view/BottomNavbar/BottomNavbar.dart';
 import 'package:meettown/view/splash_view.dart';
 import '../../res/appcolors.dart';
 import 'package:provider/provider.dart';
@@ -28,13 +29,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AuthController()),
         ChangeNotifierProvider(create: (_) => SplashController()),
         ChangeNotifierProvider(create: (_) => CompletedProfileController()),
-
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primaryColor:appColors.appBgColor,
+          primaryColor: appColors.appBgColor,
           // scaffoldBackgroundColor: appColors.appBgColor,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
@@ -82,6 +82,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: SplashView(),
+        // home: CustomNavbar(),
       ),
     );
   }

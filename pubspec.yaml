@@ -43,6 +43,13 @@ dependencies:
   provider:
   flutter_launcher_icons: ^0.13.1
   image_picker: ^1.0.7
+  geolocator: ^11.0.0
+  geocoding: ^3.0.0
+  google_place: ^0.4.7
+  google_maps_flutter: ^2.5.3
+  permission_handler: ^11.0.1
+  persistent_bottom_nav_bar: ^5.0.2
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:

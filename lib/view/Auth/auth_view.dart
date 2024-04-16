@@ -40,7 +40,7 @@ class AuthView extends StatelessWidget {
                     Container(
                       width: size.width * .60,
                       child: Text(
-                        'Enter your personal detials and start journey with us',
+                        'Enter your personal details and start journey with us',
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme

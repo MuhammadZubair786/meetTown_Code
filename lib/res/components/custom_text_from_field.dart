@@ -22,7 +22,7 @@ class CustomTextInputField extends StatelessWidget {
         keyboardType: keyboard,
 
       decoration: InputDecoration(
-      
+       hintStyle: TextStyle(color: Colors.white),
         hintText: title,
       ),
     );
@@ -44,9 +44,11 @@ class CustomTextInputPasswordField extends StatelessWidget {
     return Consumer<PasswordVisibilityModel>(
       builder: (context, passwordVisibilityModel, child) => TextFormField(
         obscureText: passwordVisibilityModel.isPasswordVisible,
+        
         decoration: InputDecoration(
-          
+        
           hintText: title,
+         hintStyle: TextStyle(color: Colors.white),
           suffixIcon: IconButton(
             icon: Icon(
               passwordVisibilityModel.isPasswordVisible
@@ -84,7 +86,7 @@ class CustomTextInputPasswordFieldForSignUp extends StatelessWidget {
         decoration: InputDecoration(
           
           hintText: title,
-          
+             hintStyle: TextStyle(color: Colors.white),
         ),
       ),
     );

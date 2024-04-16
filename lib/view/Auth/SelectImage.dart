@@ -71,6 +71,10 @@ class _SelectImagePageState extends State<SelectImagePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/imgs/log-regis-bg.jpg'),
+                fit: BoxFit.cover)),
       height: 300,
       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
