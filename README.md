@@ -14,3 +14,29 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+Travel backend url  : 
+ https://travel-journal-api-bootcamp.do.dibimbing.id
+
+Postman Collection link :
+https://we.tl/t-5rumWXcSiT
+
+website make in react or for state mangemnt redux or bootstrap for css
+website look like professional and ui attractive 
+website responsive for all screens
+
+backend approved
+
+
+Travel website main portion 
+
+Authentication
+User
+Category
+Activity
+Promo
+
+
+
+
